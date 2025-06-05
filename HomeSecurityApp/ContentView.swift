@@ -1,26 +1,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var authVM = AuthViewModel()
+    
     var body: some View {
-        TabView {
-            DevicesView()
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Devices")
+        Group {
+            if authVM.isLoggedIn {
+                MainView()
+                    .environmentObject(authVM)
+            } else {
+                if authVM.showSignup {
+                    SignupView()
+                        .environmentObject(authVM)
+                } else {
+                    LoginView()
+                        .environmentObject(authVM)
                 }
-
-            CameraView()
-                .tabItem {
-                    Image(systemName: "camera.fill")
-                    Text("Camera")
-                }
-
-            SettingsView()
-                .tabItem {
-                    Image(systemName: "gearshape.fill")
-                    Text("Settings")
-                }
+            }
         }
-        .accentColor(.blue)
     }
 }

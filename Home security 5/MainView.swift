@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var authVM: AuthViewModel
+    
     var body: some View {
         TabView {
             
@@ -19,6 +21,15 @@ struct MainView: View {
                     Label("Settings", systemImage: "gear")
                 }
         }
-        .accentColor(.blue) // Customize the selected tab color
+        .accentColor(.blue)
+        .overlay(alignment: .topTrailing) {
+            Button(action: {
+                authVM.logout()
+            }) {
+                Image(systemName: "power")
+                    .foregroundColor(.red)
+                    .padding()
+            }
+        }
     }
 }

@@ -1,16 +1,17 @@
 import SwiftUI
 
-struct LoginView: View {
+struct SignupView: View {
     @EnvironmentObject var authVM: AuthViewModel
     @State private var email = ""
     @State private var password = ""
+    @State private var confirmPassword = ""
     @State private var showAlert = false
     @State private var alertMessage = ""
     
     var body: some View {
         NavigationView {
             VStack(spacing: 30) {
-                Text("Welcome Back")
+                Text("Create Account")
                     .font(.largeTitle)
                     .bold()
                 
@@ -30,20 +31,21 @@ struct LoginView: View {
                         .padding()
                         .background(Color(.systemGray6))
                         .cornerRadius(8)
+                    
+                    Text("Confirm Password")
+                        .font(.headline)
+                    SecureField("Re-enter your password", text: $confirmPassword)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
                 }
                 
                 Button(action: {
-                    if isValidEmail(email) && !password.isEmpty {
-                        if !authVM.login(email: email, password: password) {
-                            alertMessage = "Invalid email or password."
-                            showAlert = true
-                        }
-                    } else {
-                        alertMessage = "Please enter a valid email and password."
-                        showAlert = true
+                    if validateInputs() {
+                        authVM.signup(email: email, password: password)
                     }
                 }) {
-                    Text("Log In")
+                    Text("Sign Up")
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -52,20 +54,39 @@ struct LoginView: View {
                 }
                 
                 Button(action: {
-                    authVM.showSignup = true
+                    authVM.showSignup = false
                 }) {
-                    Text("Don't have an account? Sign Up")
+                    Text("Already have an account? Log In")
                         .foregroundColor(.blue)
                 }
                 
                 Spacer()
             }
             .padding()
-            .navigationTitle("Login")
+            .navigationTitle("Sign Up")
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
         }
+    }
+    
+    func validateInputs() -> Bool {
+        guard isValidEmail(email) else {
+            alertMessage = "Please enter a valid email address."
+            showAlert = true
+            return false
+        }
+        guard !password.isEmpty else {
+            alertMessage = "Password cannot be empty."
+            showAlert = true
+            return false
+        }
+        guard password == confirmPassword else {
+            alertMessage = "Passwords do not match."
+            showAlert = true
+            return false
+        }
+        return true
     }
     
     func isValidEmail(_ email: String) -> Bool {
