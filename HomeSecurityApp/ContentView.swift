@@ -1,13 +1,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isLoggedIn = false
-
     var body: some View {
-        if isLoggedIn {
-            MainView()
-        } else {
-            LoginView(isLoggedIn: $isLoggedIn)
+        TabView {
+            DevicesView()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Devices")
+                }
+
+            CameraView()
+                .tabItem {
+                    Image(systemName: "camera.fill")
+                    Text("Camera")
+                }
+
+            SettingsView()
+                .tabItem {
+                    Image(systemName: "gearshape.fill")
+                    Text("Settings")
+                }
         }
+        .accentColor(.blue)
     }
 }

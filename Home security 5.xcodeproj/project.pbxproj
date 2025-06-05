@@ -14,8 +14,10 @@
 		65380EB72DCDF9CE00102311 /* Home_security_5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65380EB62DCDF9CE00102311 /* Home_security_5UITests.swift */; };
 		65380EB92DCDF9CE00102311 /* Home_security_5UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65380EB82DCDF9CE00102311 /* Home_security_5UITestsLaunchTests.swift */; };
 		65380ECA2DCDFA1100102311 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65380EC72DCDFA0F00102311 /* MainView.swift */; };
-		65380ECB2DCDFA1100102311 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65380EC82DCDFA1000102311 /* SideMenuView.swift */; };
 		65380ECC2DCDFA1100102311 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65380EC92DCDFA1100102311 /* LoginView.swift */; };
+		65C035532DF186A700F9ECA9 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C035522DF186A600F9ECA9 /* CameraView.swift */; };
+		65C035552DF186D400F9ECA9 /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C035542DF186D400F9ECA9 /* DevicesView.swift */; };
+		65C035572DF1871400F9ECA9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C035562DF1871400F9ECA9 /* SettingsView.swift */; };
 		65CB45532DCE009D00988BF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CB45522DCE009D00988BF6 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +49,10 @@
 		65380EB62DCDF9CE00102311 /* Home_security_5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_security_5UITests.swift; sourceTree = "<group>"; };
 		65380EB82DCDF9CE00102311 /* Home_security_5UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_security_5UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		65380EC72DCDFA0F00102311 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		65380EC82DCDFA1000102311 /* SideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		65380EC92DCDFA1100102311 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		65C035522DF186A600F9ECA9 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		65C035542DF186D400F9ECA9 /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		65C035562DF1871400F9ECA9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		65CB45522DCE009D00988BF6 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = HomeSecurityApp/ContentView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -104,7 +108,9 @@
 				65CB45522DCE009D00988BF6 /* ContentView.swift */,
 				65380EC92DCDFA1100102311 /* LoginView.swift */,
 				65380EC72DCDFA0F00102311 /* MainView.swift */,
-				65380EC82DCDFA1000102311 /* SideMenuView.swift */,
+				65C035522DF186A600F9ECA9 /* CameraView.swift */,
+				65C035542DF186D400F9ECA9 /* DevicesView.swift */,
+				65C035562DF1871400F9ECA9 /* SettingsView.swift */,
 				65380E9F2DCDF9CE00102311 /* Assets.xcassets */,
 				65380EA12DCDF9CE00102311 /* Preview Content */,
 			);
@@ -266,10 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65C035572DF1871400F9ECA9 /* SettingsView.swift in Sources */,
+				65C035552DF186D400F9ECA9 /* DevicesView.swift in Sources */,
 				65380ECA2DCDFA1100102311 /* MainView.swift in Sources */,
 				65CB45532DCE009D00988BF6 /* ContentView.swift in Sources */,
-				65380ECB2DCDFA1100102311 /* SideMenuView.swift in Sources */,
 				65380ECC2DCDFA1100102311 /* LoginView.swift in Sources */,
+				65C035532DF186A700F9ECA9 /* CameraView.swift in Sources */,
 				65380E9C2DCDF9CB00102311 /* Home_security_5App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
